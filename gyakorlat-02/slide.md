@@ -148,9 +148,43 @@
 ### Arany János [*"A walesi bárdok"*](/walesi_bardok.txt) c. verséből szedd ki:
 
 * – az összes nagybetűs szót
+* – a költemény születésének évét
 * – az s betűvel kezdődő sorokat
 * – az [alliterációkat](http://hu.wikipedia.org/wiki/Alliter%C3%A1ci%C3%B3#Bet.C5.B1r.C3.ADm_.28alliter.C3.A1ci.C3.B3.29)
-* – a költemény születésének évét
+* – még egy feladat...
+
+!SLIDE code
+# regexp-el használható metódusok
+
+    @@@ ruby
+    # .sub első találatot cseréli
+    "lackac@lackac.hu".sub(/@/, ' alma ')
+      # => "lackac alma lackac.hu"
+    # .gsub az összes találatot cseréli
+    "hahaha hehehe".gsub(/h[ae]/, 'hi')
+      # => "hihihi hihihi"
+
+    # felkiáltójeles változat
+    email = "lackac@lackac.hu"; email.gsub!(/@/, '!')
+    email # => "lackac alma lackac.hu"
+
+!SLIDE code
+
+    @@@ ruby
+    # block-ot is képesek fogadni, ilyenkor a block
+    # megkapja az illeszkedő sztringet és a block
+    # visszatérési értéke lesz a csere
+    emails = "lackac@lackac.hu lackac@math.bme.hu"
+    emails.gsub(/\w+@([\w.]+)/) { $1 }
+      # => "lackac.hu math.bme.hu"
+
+    "kics nagy".sub(/n[^ ]+/) {|m| m.upcase}
+      # => "kics NAGY"
+
+!SLIDE code
+
+    @@@ ruby
+    # .scan kiszedi az összes illeszkedő sztringet
 
 
 !SLIDE smbullets
