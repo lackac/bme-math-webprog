@@ -1,8 +1,8 @@
 !SLIDE center
-# <del>JAVA</del> Ruby és webprogramozás
+## <del>JAVA</del> Ruby és webprogramozás
+## 01 – Ruby ismétlés
 
-## **Bácsi László a.k.a. *LacKac***
-
+### **Bácsi László a.k.a. *LacKac***
 ### [lackac.hu](http://lackac.hu) lackac@lackac.hu
 
 !SLIDE commandline

@@ -1,1 +1,4 @@
-[ {"section":"gyakorlat-1"} ]
+[
+  { "section":"gyakorlat-01" },
+  { "section":"gyakorlat-02" }
+]
