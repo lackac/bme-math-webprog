@@ -203,6 +203,8 @@
 * – bontsd fel a költeményt verszakokra
 * – csinálj a versből "tokaji bárdokat"
 
+#### ([megoldások](/file/gyakorlat-02/megoldasok.rb))
+
 !SLIDE smbullets
 # Hasznos linkek
 
