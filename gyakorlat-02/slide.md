@@ -1,6 +1,6 @@
 !SLIDE center
-## <del>JAVA</del> Ruby és webprogramozás
-## 02 – Reguláris kifejezések
+## Ruby és webprogramozás
+## 02 – **Reguláris kifejezések**
 
 ### **Bácsi László a.k.a. *LacKac***
 ### [lackac.hu](http://lackac.hu) lackac@lackac.hu
@@ -59,7 +59,8 @@
     "ELTE" =~ /BME|ELTE/  # => 0
 
     # ( ) csoportosítás
-    "egyetem: BME" =~ /(egyetem|főiskola): ([A-Z]+)/ # => 0
+    "egyetem: BME" =~
+      /(egyetem|főiskola): ([A-Z]+)/ # => 0
 
     # a zárójeles részeket "elkapja"
     $1 # => "egyetem"
@@ -145,16 +146,15 @@
 
 !SLIDE center smbullets
 # Feladatok
-### Arany János [*"A walesi bárdok"*](/walesi_bardok.txt) c. verséből szedd ki:
+### Arany János [*"A walesi bárdok"*](/file/gyakorlat-02/walesi_bardok.txt) c. verséből szedd ki:
 
 * – az összes nagybetűs szót
 * – a költemény születésének évét
 * – az s betűvel kezdődő sorokat
 * – az [alliterációkat](http://hu.wikipedia.org/wiki/Alliter%C3%A1ci%C3%B3#Bet.C5.B1r.C3.ADm_.28alliter.C3.A1ci.C3.B3.29)
-* – még egy feladat...
 
 !SLIDE code
-# regexp-el használható metódusok
+# regexp-el használható<br/>metódusok
 
     @@@ ruby
     # .sub első találatot cseréli
@@ -165,17 +165,17 @@
       # => "hihihi hihihi"
 
     # felkiáltójeles változat
-    email = "lackac@lackac.hu"; email.gsub!(/@/, '!')
-    email # => "lackac alma lackac.hu"
+    e = "lackac@lackac.hu"; e.gsub!(/@/, '!')
+    e # => "lackac alma lackac.hu"
 
 !SLIDE code
 
     @@@ ruby
-    # block-ot is képesek fogadni, ilyenkor a block
-    # megkapja az illeszkedő sztringet és a block
-    # visszatérési értéke lesz a csere
-    emails = "lackac@lackac.hu lackac@math.bme.hu"
-    emails.gsub(/\w+@([\w.]+)/) { $1 }
+    # block-ot is képesek fogadni, ilyenkor
+    # a block megkapja az illeszkedő sztringet
+    # és a block visszatérési értékére cserél
+    e = "lackac@lackac.hu lackac@math.bme.hu"
+    e.gsub(/\w+@([\w.]+)/) { $1 }
       # => "lackac.hu math.bme.hu"
 
     "kics nagy".sub(/n[^ ]+/) {|m| m.upcase}
@@ -184,8 +184,24 @@
 !SLIDE code
 
     @@@ ruby
-    # .scan kiszedi az összes illeszkedő sztringet
+    # .scan kiszedi az illeszkedő sztringeket
+    "egy gyáva madár vágya".scan(/\S*gy\S*/)
+      # ["egy", "gyáva", "vágya"]
 
+    # ha van benne (), akkor azokat adja vissza
+    shopping_list.scan(/^(\d+) .*$/)
+      # [["1"], ["25"], ["42"]]
+
+    # .split regexpek mentén darabol sztringet
+    "Alice Bob,Carol, Dave".split(/[, ]+/)
+      # ["Alice", "Bob", "Carol", "Dave"]
+
+!SLIDE center smbullets
+# Feladatok
+### További walesi bárdokos feladatok
+
+* – bontsd fel a költeményt verszakokra
+* – csinálj a versből "tokaji bárdokat"
 
 !SLIDE smbullets
 # Hasznos linkek

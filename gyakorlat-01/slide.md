@@ -1,6 +1,6 @@
 !SLIDE center
 ## <del>JAVA</del> Ruby és webprogramozás
-## 01 – Ruby ismétlés
+## 01 – **Ruby ismétlés**
 
 ### **Bácsi László a.k.a. *LacKac***
 ### [lackac.hu](http://lackac.hu) lackac@lackac.hu
@@ -8,7 +8,7 @@
 !SLIDE commandline
 # Environment igazítás
 
-    @@@ bash
+    @@@ sh
     $ nano ~/.profile
     PATH="/usr/local/ree/bin:$PATH"
     export PATH
@@ -18,7 +18,7 @@
 
 ## Eredmény
 
-    @@@ bash
+    @@@ sh
     $ ruby --version
     ruby 1.8.7 (2009-12-24 patchlevel 248) [x86_64-linux], MBARI 0x6770, Ruby Enterprise Edition 2010.01
 
