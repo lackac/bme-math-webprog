@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
-require 'iconv'
 
 module Joke
   def self.jokes
@@ -9,13 +8,13 @@ module Joke
   end
 
   def self.get_jokes
-    doc = Nokogiri::HTML(open("http://viccek.w3w.hu/matematikai-viccek.html"))
+    doc = Nokogiri::HTML(open("http://viccek.w3w.hu/matematikai-viccek.html"), nil, 'utf-8')
     doc.css('table.blog .Post').map do |post|
       title = post.css('h3').first.text.strip
       joke = post.css('.article > p').first.children.map do |elem|
         elem.text? ? elem.text.strip : elem.node_name == "br" ? "\n" : ""
       end.join
-      Iconv.iconv('latin1', 'utf8', "# #{title}\n#{joke}")
+      "# #{title}\n#{joke}"
     end
   end
 

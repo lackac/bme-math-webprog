@@ -56,11 +56,15 @@
 
 * [http://xurrency.com/huf](http://xurrency.com/huf)
 
+#### ([megoldás](/file/gyakorlat-03/exchange_rates.rb))
+
 !SLIDE center smbullets
 # Feladatok
 ### Írass ki egy véletlenszerűen választott viccet az alábbi oldalról:
 
 * [http://viccek.w3w.hu/matematikai-viccek.html](http://viccek.w3w.hu/matematikai-viccek.html)
+
+#### ([megoldás](/file/gyakorlat-03/joke.rb))
 
 !SLIDE smbullets
 # Hasznos linkek
