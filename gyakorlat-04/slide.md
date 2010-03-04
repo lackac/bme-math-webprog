@@ -134,7 +134,7 @@
 
     # url query string kódolás
     require 'uri'
-    uri += URI.encenter('"árvíztűrő tükörfúrógép"')
+    uri += URI.encode('"árvíztűrő tükörfúrógép"')
     uri # => "http://www.google.com/search?q=%22%C3%A1rv%C3%ADzt%C5%B1r%C5%91%20t%C3%BCk%C3%B6rf%C3%BAr%C3%B3g%C3%A9p%22"
 
 
