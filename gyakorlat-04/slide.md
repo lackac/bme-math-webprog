@@ -104,7 +104,7 @@
     doc.to_xhtml(:indent => 2)
 
     # Sőt, írja is egyből fájlba
-    File.new("tweet.html", "w") do |f|
+    File.open("tweet.html", "w") do |f|
       doc.write_xhtml_to(f, :indent => 2)
     end
 
