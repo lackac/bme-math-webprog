@@ -5,7 +5,7 @@
 ### **Bácsi László a.k.a. *LacKac***
 ### [lackac.hu](http://lackac.hu) lackac@lackac.hu
 
-!SLIDE code
+!SLIDE center
 # Alapok
 
     @@@ ruby
@@ -20,7 +20,7 @@
     %r|alma|i
     Regexp.new("alma", "i")
 
-!SLIDE code
+!SLIDE center
 # Használat
 
     @@@ ruby
@@ -36,7 +36,7 @@
       puts "Ez biztos nem jó email cím"
     end
 
-!SLIDE code
+!SLIDE center
 # Speciális karakterek
 
     @@@ ruby
@@ -52,21 +52,20 @@
     # lehet benne range is
     "BME" =~ /B[A-Z][^a-z]/ # => 0
 
-!SLIDE code
+!SLIDE center
 
     @@@ ruby
     # | vagy kapcsolat
     "ELTE" =~ /BME|ELTE/  # => 0
 
     # ( ) csoportosítás
-    "egyetem: BME" =~
-      /(egyetem|főiskola): ([A-Z]+)/ # => 0
+    "egyetem: BME" =~ /(egyetem|főiskola): ([A-Z]+)/ # => 0
 
     # a zárójeles részeket "elkapja"
     $1 # => "egyetem"
     $2 # => "BME"
 
-!SLIDE code
+!SLIDE center
 
     @@@ ruby
     # * előző atom akárhányszor
@@ -85,7 +84,7 @@
     # ? előző atom legfeljebb egyszer
     "egyetem BME" =~ /egyetem:? BME/ # => 0
 
-!SLIDE code
+!SLIDE center
 
     @@@ ruby
     # {n} pontosan n-szer
@@ -104,7 +103,7 @@
 
 [![Funnyometer](funnyometer.gif)](http://www.drewheffron.com/index.php?/project/etc/)
 
-!SLIDE code
+!SLIDE center
 
     @@@ ruby
     shopping_list = <<EOS
@@ -120,7 +119,7 @@
     shopping_list.scan(/^.* ✓$/)
     # => ["25 db tojás ✓"]
 
-!SLIDE code
+!SLIDE center
 
     @@@ ruby
     # \A, \z, \Z  string eleje, vége,
@@ -134,7 +133,7 @@
     # \w szó karakter (ugyanaz, mint [0-9A-Za-z_])
     # \D, \S, \W ezek ellentetjei
 
-!SLIDE code
+!SLIDE center
 
     @@@ ruby
     # \1-9 n. csoport találata
@@ -153,7 +152,7 @@
 * – az s betűvel kezdődő sorokat
 * – az [alliterációkat](http://hu.wikipedia.org/wiki/Alliter%C3%A1ci%C3%B3#Bet.C5.B1r.C3.ADm_.28alliter.C3.A1ci.C3.B3.29)
 
-!SLIDE code
+!SLIDE center
 # regexp-el használható<br/>metódusok
 
     @@@ ruby
@@ -168,20 +167,14 @@
     e = "lackac@lackac.hu"; e.gsub!(/@/, '!')
     e # => "lackac alma lackac.hu"
 
-!SLIDE code
-
-    @@@ ruby
-    # block-ot is képesek fogadni, ilyenkor
-    # a block megkapja az illeszkedő sztringet
-    # és a block visszatérési értékére cserél
+    # block-ot is képesek fogadni, ilyenkor a block megkapja az
+    # illeszkedő sztringet és a block visszatérési értékére cserél
     e = "lackac@lackac.hu lackac@math.bme.hu"
-    e.gsub(/\w+@([\w.]+)/) { $1 }
-      # => "lackac.hu math.bme.hu"
+    e.gsub(/\w+@([\w.]+)/) { $1 } # => "lackac.hu math.bme.hu"
 
-    "kics nagy".sub(/n[^ ]+/) {|m| m.upcase}
-      # => "kics NAGY"
+    "kics nagy".sub(/n[^ ]+/) {|m| m.upcase} # => "kics NAGY"
 
-!SLIDE code
+!SLIDE center
 
     @@@ ruby
     # .scan kiszedi az illeszkedő sztringeket

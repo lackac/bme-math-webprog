@@ -6,6 +6,14 @@ h4 {
   text-align: center;
 }
 
+.smaller {
+  font-size: 80%;
+}
+
 .smallest {
   font-size: 60%;
+}
+
+pre {
+  font-size: 2em;
 }

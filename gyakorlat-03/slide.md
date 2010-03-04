@@ -5,7 +5,7 @@
 ### **Bácsi László a.k.a. *LacKac***
 ### [lackac.hu](http://lackac.hu) lackac@lackac.hu
 
-!SLIDE code
+!SLIDE center
 # Weboldal letöltés
 
     @@@ ruby
@@ -16,7 +16,7 @@
 
 #### [nyitsd meg böngészőben](http://ipcimed.hu/), és "view source"
 
-!SLIDE code
+!SLIDE center
 # Nokogiri alapok
 
     @@@ ruby
@@ -24,10 +24,9 @@
     require 'nokogiri'
     doc = Nokogiri::HTML(html)
     doc.css(".ip").first.text # => "80.98.236.148"
-    doc.xpath("//*[@class='ip']") \
-       .first.text # => "80.98.236.148"
+    doc.xpath("//*[@class='ip']").first.text # => "80.98.236.148"
 
-!SLIDE code smallest
+!SLIDE center smaller
 
 # CSS vs. XPath
 
