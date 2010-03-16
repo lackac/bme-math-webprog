@@ -11,6 +11,7 @@ uri = "http://www.google.com/search?q=#{URI.encode(%{"#{query}"})}"
 
 doc = Nokogiri::HTML(open(uri))
 # puts doc.to_xhtml(:indent => 2)
+# File.open("page.html", "w") {|f| doc.write_xhtml_to(f, :indent => 2)}
 
 doc.css(".g").each do |hit|
   link = hit.at_css("h3 a")
@@ -23,5 +24,3 @@ doc.css(".g").each do |hit|
     puts
   end
 end
-
-File.open("page.html", "w") {|f| doc.write_xhtml_to(f, :indent => 2)}
