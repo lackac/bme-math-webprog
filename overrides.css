@@ -1,3 +1,7 @@
+.slide {
+  border-color: transparent;
+}
+
 .smbullets ul {
   height: auto;
 }
@@ -16,4 +20,29 @@ h4 {
 
 pre {
   font-size: 2em;
+}
+
+.floated-image img {
+  float: left;
+  margin-right: 2em;
+}
+
+.floated-image:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.floated-image {
+  display: inline-block;
+}
+
+.with-background img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
