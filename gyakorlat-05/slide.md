@@ -65,10 +65,23 @@
     require 'app' # itt a fájl neve
     run Sinatra::Application
 
-    $ rackup -p ....
+    $ rackup -p 900x
+
+!SLIDE code center
+# Paraméterek
+
+    @@@ ruby
+    get '/' do
+      "<pre>#{params.inspect}</pre>"
+    end
+
+    get '/hi/:name' do
+      "Hello #{params[:name]}"
+    end
 
 !SLIDE smbullets
 # Hasznos linkek
 
 * **Sinatra**:
 [http://www.sinatrarb.com/](http://www.sinatrarb.com/)
+* [**HTTP** – Hypertext Transfer Protocol](http://en.wikipedia.org/wiki/Http)
