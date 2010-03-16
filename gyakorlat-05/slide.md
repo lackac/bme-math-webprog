@@ -79,6 +79,13 @@
       "Hello #{params[:name]}"
     end
 
+!SLIDE center
+# Feladat
+
+### Írj egy olyan webalkalmazást, ami a `/search/valami` kérésre visszaadja az előző gyakorlatban írt googler program segítségével a google találatokat a valami keresésre
+
+#### Természetesen a "valami" dinamikus változó, bármi lehet.
+
 !SLIDE smbullets
 # Hasznos linkek
 
