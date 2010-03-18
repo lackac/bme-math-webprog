@@ -1,0 +1,13 @@
+<p>Ruby kifejezés beillesztése:<br/>
+2 + 2 = <%= 2 + 2 %></p>
+
+<p>Ruby kód futtatása:<br/>
+<% names = ["Alice", "Bob"] %>
+Mostmár van `names` változónk:<br/>
+names = <%= names.inspect %></p>
+
+<p>Kontroll kifejezések (iterálás, if/else, stb.):<br/>
+<% names.each do |name| %>
+Hi, <%= name %>!<br/>
+<% end %>
+</p>
