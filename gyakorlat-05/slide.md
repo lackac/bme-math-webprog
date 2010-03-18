@@ -86,6 +86,8 @@
 
 #### Természetesen a "valami" dinamikus változó, bármi lehet.
 
+#### [megoldás](/file/gyakorlat-05/googler.rb) ([gist](http://gist.github.com/336342))
+
 !SLIDE smbullets
 # Hasznos linkek
 
