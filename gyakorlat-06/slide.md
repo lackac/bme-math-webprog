@@ -10,7 +10,7 @@
 
 * a `public/` könyvtár alatt minden fájl statikus fájlként lesz kiszolgálva
 * tehát a `public/design.css` a `/design.css` útvonalon
-* és a `public/images/lolcat.jpg` a `/images/lolcat.png` útvonalon lesz elérhető
+* és a `public/images/lolcat.jpg` a `/images/lolcat.jpg` útvonalon lesz elérhető
 
 !SLIDE center smbullets
 # View fájlok
