@@ -5,8 +5,8 @@
 * online kollaboráció projekteken
 * git-et használ verziókövetésre
 * lehet mások projektjeit *fork*-olni (leágazás)
-* és még hibakövetés, dokumentáció, szép és jól használható interfész, stb.
-* open-source projektekre ingyenes
+* hibakövetés, dokumentáció, szép és jól használható interfész, stb.
+* Open Source projektekre ingyenes
 
 !SLIDE commandline
 # Regisztrációhoz SSH kulcs
@@ -28,20 +28,12 @@
 * utána kövessétek az utasításokat a "Next Step" alatt
 
 !SLIDE center smbullets small
-# Általános Wrokflow
+# Általános Workflow
 
-* szinkronizálás a távoli repóval `git pull`
+* szinkronizálás a távoli repóval: `git pull`
 * fájlok szerkesztgetése
-* átnézed, hogy mit változtattál `git diff`
-* amit commitolni akarsz, azt berakod az *index*-be `git add .`
-* commitolsz `git commit -m "valami commit message"`
-* ismételed, amíg gondolod a második ponttól
-* kirakod a távoli repóba `git push`
-
-!SLIDE smbullets
-# Hasznos linkek
-
-* **GitHub**:
-[http://github.com/](http://github.com/)
-* **GitHub Help oldalak**:
-[http://help.github.com/](http://help.github.com/)
+* átnézed, hogy mit változtattál: `git diff`
+* amit commitolni akarsz, azt berakod az *index*-be: `git add .`
+* commitolsz: `git commit -m "valami commit message"`
+* a második ponttól ismételed, amíg csak akarod
+* kirakod a távoli repóba: `git push`

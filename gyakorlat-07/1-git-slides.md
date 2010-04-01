@@ -30,21 +30,14 @@
 * nagyon egyszerű *branch*-ek létrehozása
 * pl. Git, Mercurial, Bazaar
 
-!SLIDE center smbullets
-# Git
-
-* elosztott verziókövető rendszer (DVCS)
-* mindenkinél van egy teljes másolat
-* ezek között könnyen lehet szinkronizálni
-* használat: `git parancs [argumentumok]`
-
 !SLIDE center smbullets smaller
-# Alapfogalmak
+# Git Alapfogalmak
 
 * ***repository***: az összes verziót tartalmazó *adatbázis*
 * ***branch***: egy fejlesztési ág
 * ***master***: a fő fejlesztési ág
 * ***working copy***: az jelenleg látott állapota a projektnek aktuális változtatásokkal együtt
+* ***index***: commitolásra jelölt változtatások
 * ***commit***: egy változtatás a projektben (érinthet több fájlt is, nevezhetjük *revision*-nek is)
 * ***HEAD***: a legutolsó *commit* az aktuális *branch*-ben
 * ***tag***: egy névvel ellátott *commit*
@@ -54,18 +47,88 @@
 !SLIDE commandline
 # Elindulás
 
+    $ # használat: git parancs [argumentumok]
     $ git config --global user.name "László Bácsi"
     $ git config --global user.email "lackac@lackac.hu"
     $ git config --global core.editor 'vim' # vagy más
     $ cat ~/.gitconfig
 
+    $ git help
+
+!SLIDE center
+# Fontosabb parancsok
+
+!SLIDE commandline
+
+    $# aktuális könyvtárból git repository készítés
     $ mkdir my_project
     $ cd my_project
     $ git init
+    Initialized empty Git repository in ...
+
+    $# el lehet kezdeni a fejlesztést
     $ echo "Ez itt az én kis projektem" > README
-    $ git add .
-    $ git commit -m "Első commitom"
+
+    $# git indexhez adunk fájlokat
+    $ git add README
+    $# vagy lehetne `git add .` és akkor
+    $# mindent hozzáad rekurzívan
+
+#### [az indexről bővebben](http://gitready.com/beginner/2009/01/18/the-staging-area.html)
+
+!SLIDE commandline
+
+    $# working copy aktuális állapota
+    $ git status
+    $# új fájlt hozunk létre, akkor mi lesz?
+    $ echo "require 'rubygems'" > app.rb
+    $ git status
+
+    $# becommitoljuk az index tartalmát
+    $ git commit -m "Commit üzenet"
+    $ echo "változás" >> README
+    $ git status
+    $# minden már követett és módosult fájl commitolása
+    $ git commit -a
+    $ git status
+
+!SLIDE commandline
+
+    $# projekt eddigi története
     $ git log
+    $ git log -p
+    $# változtassunk megint valamit
+    $ echo "még egy változás" >> README
+    $# nézzük mi változott az utolsó commit óta
+    $ git diff
+
+!SLIDE center
+# Git Branch-ek
+
+!SLIDE center
+
+![Git Branching Model](git-branches.png)
+
+!SLIDE commandline
+
+    $# új branch létrehozása
+    $# aktuális ponton csinál egy új ágat
+    $ git checkout -b branch_neve
+    $# milyen branch-ek vannak
+    $ git branch
+    $# aktuális változások is átjöttek
+    $ git status
+    $ git add .
+    $ git commit -m "minden mehet be"
+
+!SLIDE commandline
+
+    $# vissza a master ágba
+    $ git checkout master
+    $# mergeöljük össze a két ágat
+    $ git merge branch_neve
+    $# nincs hiba, minden itt van, `branch_neve` törölhető
+    $ git branch -d branch_neve
 
 !SLIDE commandline
 # Szinkronizálás
@@ -80,29 +143,26 @@
     $ git pull origin master
 
 !SLIDE commandline smaller
-# Fontosabb parancsok
+# Ismétlés
+### argumentumok nélkül... további helphez `git parancs -h` vagy `git help parancs`
 
-    $ git init
-    $ git clone
-    $ git add
-    $ git commit
-    $ git log
-    $ git diff
-    $ git push
-    $ git pull
-    $ git checkout -b
-    $ git checkout
+    $ git init            # új repó
+    $ git clone           # távoli repó klónozás
+    $ git add             # fájlok indexhez adása
+    $ git status          # working copy állapota
+    $ git commit          # index commitolása
+    $ git commit -a       # minden módosult követett fájl commitolása
+    $ git log             # commit history
+    $ git diff            # változások utolsó commit óta
+    $ git push            # lokális repó változások kirakása
+    $ git pull            # távoli repó változások behúzása
+    $ git checkout -b     # új branch létrehozás
+    $ git checkout        # branchek között váltás (de más is)
+    $ git branch          # összes lokális branch
 
-!SLIDE smbullets
-# Hasznos linkek
+!SLIDE commandline
+# Amik nem voltak
 
-* **Hivatalos Git Honlap**:
-[http://git-scm.com/](http://git-scm.com/)
-* **Pro Git** (egy részletes könyv):
-[http://progit.org/book/](http://progit.org/book/)
-* **Hasznos leírások kezdőknek**:
-[http://learn.github.com/](http://learn.github.com/)
-* **Tippek minden szinten**:
-[http://www.gitready.com/](http://www.gitready.com/)
-* **Miben jobb, mint a többi**:
-[http://whygitisbetterthanx.com/](http://whygitisbetterthanx.com/)
+    $ git rebase
+    $ git stash
+    $# és még sok más...

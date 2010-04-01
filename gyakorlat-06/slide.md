@@ -67,12 +67,6 @@
       </body>
     </html>
 
-!SLIDE center
-# Form létrehozás
-
-!SLIDE center
-# POST kezelés
-
 !SLIDE smbullets
 # Hasznos linkek
 
