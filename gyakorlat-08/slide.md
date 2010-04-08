@@ -43,11 +43,11 @@
       action="/login"     <= ide küldjük az adatokat
       method="POST"       <= hogyan küldjük (GET v. POST)
       enctype="application/x-www-form-urlencoded"
-                          <= milyen formában küldjük
+                          <= milyen formában küldjük (opcionális)
                              lehet még: multipart/form-data
 
 !SLIDE center
-# Elemek tagoláshoz leíráshoz
+# Elemek tagoláshoz, leíráshoz
 
     @@@
     <fieldset>            <= form tagolására használható
@@ -62,10 +62,13 @@
     <input                <= mindenféle input elem
       id="user"            - egyedi azonosító
       name="user"          - így megy tovább a szerver oldalra
+                             ez a kettő minden input elemen van
       value="LacKac"       - alapérték
       type="..."           - input elem típusa, lásd később
 
     <textarea>...         <= többsoros szöveges mező
+                             az érték az elem "belsejében" van
+                             (<textarea>alapérték</textarea>)
 
     <select               <= legördülős választó
       multiple="multiple"  - lehessen-e többet is választani
@@ -127,7 +130,8 @@
 
 * a HTTP protokoll állapotmentes
 * állapot megtartására ún. session-t szoktak használni
-* sok megvalósítás van, Sinatra alapbók cookie alapú session-t ad
+* sok megvalósítás van
+* Sinatra alapból cookie alapú session-t használ, de ezt is be kell kapcsolni
 
 !SLIDE center
 # Session használat
