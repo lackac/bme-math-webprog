@@ -1,6 +1,6 @@
 !SLIDE center
 ## Ruby és webprogramozás
-## 06 – **Sinatra**: nézetek és űrlapok
+## 06 – **Sinatra**: views and layouts
 
 ### **Bácsi László a.k.a. *LacKac***
 ### [lackac.hu](http://lackac.hu) lackac@lackac.hu

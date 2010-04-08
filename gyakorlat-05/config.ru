@@ -1,3 +1,4 @@
 require 'app'
 require 'googler'
-run Sinatra::Application
+
+run WebProg::Gyakorlat05
