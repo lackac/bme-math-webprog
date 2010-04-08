@@ -2,11 +2,8 @@
 
 <p><a href="slides">Slides</a></p>
 
-<% if error = session.delete(:error) %>
-<p class="error"><%= error %></p>
-<% end %>
-
-<form action="<%= path "/login" %>" method="POST">
+<% unless session[:logged_in] %>
+<form action="login" method="POST">
   <fieldset>
     <legend>Bejelentkezés</legend>
     <p>
@@ -20,3 +17,7 @@
     <p><input type="submit" value="Mehet" /></p>
   </fieldset>
 </form>
+<% else %>
+<p><a href="titkok">Titkok...</a></p>
+<p><a href="logout">Kijelentkezés</a></p>
+<% end %>

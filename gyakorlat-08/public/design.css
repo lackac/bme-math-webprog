@@ -46,6 +46,10 @@ body {
   text-align: center;
 }
 
+.notice {
+  color: green;
+}
+
 .error {
   color: red;
 }

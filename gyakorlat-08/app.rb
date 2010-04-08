@@ -15,6 +15,7 @@ module WebProg
     post "/login" do
       if params[:user] == "LacKac" and params[:pass] == "jelszo"
         session[:logged_in] = true
+        session[:notice] = "Sikeres bejelentkezés!"
         redirect path("/titkok")
       else
         session[:error] = "Hibás felhasználónév vagy jelszó"
@@ -24,6 +25,7 @@ module WebProg
 
     get "/logout" do
       session[:logged_in] = nil
+      session[:notice] = "Sikeres kijelentkezés!"
       redirect path("/")
     end
 

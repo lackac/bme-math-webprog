@@ -17,6 +17,12 @@
         </h1>
       </div>
       <div id="content">
+<% if notice = session.delete(:notice) %>
+        <p class="notice"><%= notice %></p>
+<% end %>
+<% if error = session.delete(:error) %>
+        <p class="error"><%= error %></p>
+<% end %>
         <%= yield %>
       </div>
       <div id="footer">
