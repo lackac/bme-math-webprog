@@ -1,0 +1,22 @@
+<h2>Főoldal</h2>
+
+<p><a href="slides">Slides</a></p>
+
+<% if error = session.delete(:error) %>
+<p class="error"><%= error %></p>
+<% end %>
+
+<form action="<%= path "/login" %>" method="POST">
+  <fieldset>
+    <legend>Bejelentkezés</legend>
+    <p>
+      <label for="user">Felhasználónév:</label>
+      <input type="text" id="user" name="user" />
+    </p>
+    <p>
+      <label for="pass">Jelszó:</label>
+      <input type="password" id="pass" name="pass" />
+    </p>
+    <p><input type="submit" value="Mehet" /></p>
+  </fieldset>
+</form>
