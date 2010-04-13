@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+    <title>My Little WebApp</title>
+    <link href="<%= path "/design.css" %>" media="screen, projection" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class='container'>
+      <div id="header">
+        <h1>
+          <a href="<%= path "/" %>">
+            <img src="<%= path "/images/logo.png" %>">
+            My Little WebApp
+          </a>
+        </h1>
+      </div>
+      <div id="content">
+<% if notice = session.delete(:notice) %>
+        <p class="notice"><%= notice %></p>
+<% end %>
+<% if error = session.delete(:error) %>
+        <p class="error"><%= error %></p>
+<% end %>
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <small>Copyright © 2010, BME Matematika Intézet</small>
+      </div>
+    </div>
+  </body>
+</html>
