@@ -37,5 +37,12 @@ module WebProg
         redirect path("/")
       end
     end
+
+    get "/search" do
+      re = Regexp.new("\\b#{params[:q]}\\b", "iu")
+      kozmondasok = File.readlines(File.join(File.dirname(__FILE__), "kozmondasok.txt"))
+      @matches = kozmondasok.select {|l| l =~ re}
+      erb :search
+    end
   end
 end

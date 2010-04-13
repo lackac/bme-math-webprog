@@ -1,0 +1,19 @@
+<form action="search" method="GET">
+  <p>
+    <label for="q">Keresett szó:</label>
+    <input type="text" id="q" name="q" value="<%= params[:q] %>" />
+    <input type="submit" value="Mehet" />
+  </p>
+</form>
+
+<h2>Közmondás találatok</h2>
+
+<% if @matches.empty? %>
+<p>Nincs találat</p>
+<% else %>
+<ul>
+  <% @matches.each do |match| %>
+    <li><%= match %></li>
+  <% end %>
+</ul>
+<% end %>
