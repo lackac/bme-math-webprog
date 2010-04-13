@@ -165,6 +165,8 @@
 * `/titok` ne legyen elérhető jelszó nélkül
 * ha nem jó a jelszó, vagy bejelentkezés nélkül próbálkozik valaki, akkor a bejelentkező form jelenjen meg újra fölötte hibaüzenettel
 
+#### megoldás: [app.rb](http://github.com/lackac/bme-math-webprog/blob/master/gyakorlat-08/app.rb#L15,L39), [home.erb](http://github.com/lackac/bme-math-webprog/blob/master/gyakorlat-08/views/home.erb#L5,L23), [layout.erb](http://github.com/lackac/bme-math-webprog/blob/master/gyakorlat-08/views/layout.erb#L20,L25)
+
 !SLIDE center smbullets
 # Feladat
 ### Közmondások keresése
@@ -174,6 +176,8 @@
 * az alkalmazásban legyen egy kereső form
 * a keresés a `/search` útonalon történjen
 * és adjon vissza minden olyan közmondást, amiben szerepel a keresett szó
+
+#### megoldás: [kozmondasok.rb](http://github.com/lackac/bme-math-webprog/blob/master/gyakorlat-08/kozmondasok.rb), [app.rb](http://github.com/lackac/bme-math-webprog/blob/master/gyakorlat-08/app.rb#L41,L46), [home.erb](http://github.com/lackac/bme-math-webprog/blob/master/gyakorlat-08/views/home.erb#L25,L34), [search.erb](http://github.com/lackac/bme-math-webprog/blob/master/gyakorlat-08/views/search.erb)
 
 !SLIDE smbullets
 # Hasznos linkek
