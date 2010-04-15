@@ -1,6 +1,6 @@
 !SLIDE center
 ## Ruby és webprogramozás
-## 09 – Adatbázisok, SQL
+## 09 – Adatbázisok, SQL, Sequel
 
 ### **Bácsi László a.k.a. *LacKac***
 ### [lackac.hu](http://lackac.hu) lackac@lackac.hu
