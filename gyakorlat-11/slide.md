@@ -23,4 +23,4 @@
 !SLIDE center smbullets
 # Regisztráció, authentikáció
 
-## [github.com/lackac/my_secrets tag:gyakorlat-11](http://github.com/lackac/my_secrets/tree/gyakorlat-11)
+### github.com/lackac/my_secrets – [tag:gyakorlat-11](http://github.com/lackac/my_secrets/tree/gyakorlat-11)
