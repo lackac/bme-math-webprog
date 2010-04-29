@@ -234,7 +234,7 @@
 * lehessen regisztrálni (teljes név, felhasználónév, jelszó, kor)
 * az adatbázis alapján bejelentkezni (tipp: session-ben érdemes a user `id`-jét tárolni)
 * bejelentkezett felhasználó láthassa csak a titkot
-* legyen egy oldal, ami listázza az össze felhasználót (név, felhasználónév, kor)
+* legyen egy oldal, ami listázza az összes felhasználót (név, felhasználónév, kor)
 
 !SLIDE smbullets
 # Hasznos linkek

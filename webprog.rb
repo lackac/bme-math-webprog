@@ -9,3 +9,9 @@ module WebProg
     end
   end
 end
+
+class NilClass
+  def empty?
+    true
+  end
+end
